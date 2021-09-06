@@ -1,3 +1,6 @@
+#!/usr/bin/env groovy
+@Library("testJenkinsGroovy@master")
+
 def mainn = new org.mainn.Maine()
 
 pipeline {
