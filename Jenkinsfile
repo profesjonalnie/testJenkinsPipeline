@@ -1,4 +1,4 @@
-def mainn = new org.mainn()
+def mainn = new org.mainn.Maine()
 
 pipeline {
     agent { docker { image 'node:14-alpine' } }
