@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 @Library("testJenkinsGroovy@master")
 
-def mainn = new org.mainn.Maine()
+def mainn = new nope.Maine()
 
 pipeline {
     agent { docker { image 'node:14-alpine' } }
