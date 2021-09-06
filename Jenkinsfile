@@ -12,7 +12,9 @@ pipeline {
             }
         }
         stage('test scriptes') {
+            steps {
             mainn.buildImage();
+            }
         }
     }
 }
