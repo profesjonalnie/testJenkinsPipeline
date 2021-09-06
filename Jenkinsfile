@@ -1,7 +1,3 @@
-import Maine
-
-def testGroovy = new Maine()
-
 pipeline {
     agent { docker { image 'node:14-alpine' } }
     stages {
@@ -11,7 +7,7 @@ pipeline {
             }
         }
         stage('test scriptes') {
-            testGroovy.buildImage();
+            org.mainn.buildImage();
         }
     }
 }
