@@ -1,3 +1,5 @@
+def mainn = new org.mainn()
+
 pipeline {
     agent { docker { image 'node:14-alpine' } }
     stages {
@@ -7,7 +9,7 @@ pipeline {
             }
         }
         stage('test scriptes') {
-            org.mainn.buildImage();
+            mainn.buildImage();
         }
     }
 }
