@@ -14,7 +14,7 @@ pipeline {
         stage('test scriptes') {
             steps {
                 script{
-            mainn.buildImage();
+            mainn.buildImage(credentialsId: "azure-sp-ev4");
                 }
             }
         }
