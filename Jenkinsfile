@@ -6,7 +6,6 @@ def mainn = new nope.Maine()
 pipeline {
     agent {         docker {
       image "mcr.microsoft.com/azure-cli:latest"
-      label "docker && linux"
       args "-u root"
     } }
     stages {
