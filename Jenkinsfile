@@ -4,11 +4,11 @@
 def mainn = new nope.Maine()
 
 pipeline {
-    agent { docker { image 'node:14-alpine' } }
+    agent { docker { image 'docker:latest' } }
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
+                sh 'docker --version'
             }
         }
         stage('test scriptes') {
