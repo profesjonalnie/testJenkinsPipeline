@@ -4,8 +4,10 @@
 def mainn = new nope.Maine()
 
 pipeline {
-    agent {     dockerfile {
-        filename 'Dockerfile'
+    agent {         docker {
+      image "mcr.microsoft.com/azure-cli:latest"
+      label "docker && linux"
+      args "-u root"
     } }
     stages {
         stage('build') {
