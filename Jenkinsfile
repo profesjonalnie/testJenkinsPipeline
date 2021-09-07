@@ -4,11 +4,14 @@
 def mainn = new nope.Maine()
 
 pipeline {
-    agent { docker { image 'ubuntu:20.04' } }
+    agent {     dockerfile {
+        filename 'Dockerfile'
+        label 'my-defined-label'
+    } }
     stages {
         stage('build') {
             steps {
-                sh 'lsb_release'
+                sh 'echo abcd'
             }
         }
         stage('test scriptes') {
