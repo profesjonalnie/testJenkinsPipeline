@@ -4,11 +4,11 @@
 def mainn = new nope.Maine()
 
 pipeline {
-    agent { docker { image 'docker:latest' } }
+    agent { docker { image 'ubuntu:20.04' } }
     stages {
         stage('build') {
             steps {
-                sh 'docker --version'
+                sh 'lsb_release'
             }
         }
         stage('test scriptes') {
