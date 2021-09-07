@@ -6,7 +6,6 @@ def mainn = new nope.Maine()
 pipeline {
     agent {     dockerfile {
         filename 'Dockerfile'
-        label 'my-defined-label'
     } }
     stages {
         stage('build') {
