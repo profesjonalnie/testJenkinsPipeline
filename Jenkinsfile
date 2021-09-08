@@ -9,9 +9,14 @@ pipeline {
       args "-u root"
     } }
     stages {
-        stage('build') {
+        stage('testing echo') {
             steps {
                 sh 'echo abcd'
+            }
+        }
+        stage('install kubectl'){
+            steps {
+                mainn.installKubectl()
             }
         }
         stage('test scriptes') {
@@ -19,6 +24,11 @@ pipeline {
                 script{
             mainn.buildImage(credentialsId: "azure-sp-ev4");
                 }
+            }
+        }
+        stage('verify scope'){
+            steps {
+                mainn.secondFunction()
             }
         }
     }
