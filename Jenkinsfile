@@ -11,12 +11,16 @@ pipeline {
     stages {
         stage('testing echo') {
             steps {
+                script {
                 sh 'echo abcd'
+                }
             }
         }
         stage('install kubectl'){
             steps {
+                script {
                 mainn.installKubectl()
+                }
             }
         }
         stage('test scriptes') {
@@ -28,7 +32,9 @@ pipeline {
         }
         stage('verify scope'){
             steps {
+                script {
                 mainn.secondFunction()
+                }
             }
         }
     }
