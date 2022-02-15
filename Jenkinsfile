@@ -9,28 +9,28 @@ pipeline {
       args "-u root"
     } }
     stages {
-        stage('testing echo') {
+        stage('testing script inside jenkinsfile') {
             steps {
                 script {
                 sh 'echo abcd'
                 }
             }
         }
-        stage('install kubectl'){
+        stage('Using connection from groovy'){
             steps {
                 script {
-                mainn.installKubectl()
+                mainn.testingOne(TAG_NAME)
                 }
             }
         }
-        stage('test scriptes') {
+        stage('next groovy') {
             steps {
                 script{
             mainn.buildImage(credentialsId: "azure-sp-ev4");
                 }
             }
         }
-        stage('verify scope'){
+        stage('last groovy'){
             steps {
                 script {
                 mainn.secondFunction()
