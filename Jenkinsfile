@@ -2,6 +2,7 @@
 @Library("testJenkinsGroovy@master")
 
 def mainn = new nope.Maine()
+def TAG_NAME=""
 
 pipeline {
     agent {         docker {
@@ -19,7 +20,7 @@ pipeline {
         stage('Using connection from groovy'){
             steps {
                 script {
-                def TAG_NAME= "manulttt"
+                TAG_NAME= "manulttt"
                 mainn.testingOne(TAG_NAME)
                 }
             }
