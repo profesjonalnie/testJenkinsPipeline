@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                 def TAG_NAME= "manulttt"
-                mainn.testingOne()
+                mainn.testingOne(TAG_NAME)
                 }
             }
         }
