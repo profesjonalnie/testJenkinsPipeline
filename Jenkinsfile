@@ -20,7 +20,7 @@ pipeline {
         stage('Using connection from groovy'){
             steps {
                 script {
-                mainn.testingOne(TAG_NAME: TAG_NAME? TAG_NAME: null)
+                mainn.testingOne(TAG_NAME: TAG_NAME? TAG_NAME: "dupa")
                 }
             }
         }
