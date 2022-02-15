@@ -19,7 +19,7 @@ pipeline {
         stage('Using connection from groovy'){
             steps {
                 script {
-                mainn.testingOne(TAG_NAME)
+                mainn.testingOne()
                 }
             }
         }
