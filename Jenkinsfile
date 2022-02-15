@@ -20,8 +20,7 @@ pipeline {
         stage('Using connection from groovy'){
             steps {
                 script {
-                TAG_NAME= "manulttt"
-                mainn.testingOne()
+                mainn.testingOne(TAG_NAME: env.TAG_NAME? env.TAG_NAME: null)
                 }
             }
         }
