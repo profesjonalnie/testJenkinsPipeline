@@ -24,17 +24,17 @@ pipeline {
                 }
             }
         }
-        stage('next groovy') {
-            steps {
-                script{
-            mainn.buildImage(credentialsId: "azure-sp-ev4");
-                }
-            }
-        }
         stage('last groovy'){
             steps {
                 script {
                 mainn.secondFunction()
+                }
+            }
+        }
+        stage('next groovy') {
+            steps {
+                script{
+            mainn.buildImage(credentialsId: "azure-sp-ev4");
                 }
             }
         }
