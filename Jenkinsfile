@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 @Library("testJenkinsGroovy@master")
 
-def mainn = new nope.Maine()
+def mainn = new nope.Maine(zmienna: "mmmooojja")
 def TAG_NAME=""
 
 pipeline {
