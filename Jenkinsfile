@@ -17,20 +17,20 @@ pipeline {
                 }
             }
         }
-        stage('use docker image') {
-            steps {
-                script {
-                    docker.build("alpine").run("--network host"){
-                        sh "apk add curl"
-                        sh "curl https://teststatic.viessmann.com/resources/technical_documents/DE/de/WCL/4759849WCL00002_1.pdf"
-                    }
-                }
-            }
-        }
         stage('Using connection from groovy'){
             steps {
                 script {
                 mainn.testingOne(TAG_NAME: buildingTag(), abc: "bla bla", zmiennaWidmo: "")
+                }
+            }
+        }
+        stage('use docker image') {
+            steps {
+                script {
+                    docker.build("mytag").run("--network host"){
+                        sh "apk add curl"
+                        sh "curl https://teststatic.viessmann.com/resources/technical_documents/DE/de/WCL/4759849WCL00002_1.pdf"
+                    }
                 }
             }
         }
