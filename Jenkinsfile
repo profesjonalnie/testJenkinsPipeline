@@ -14,6 +14,7 @@ pipeline {
             steps {
                 script {
                 sh 'echo abcd'
+                println "CUSTOM_CA: ${CUSTOM_CA}"
                 }
             }
         }
